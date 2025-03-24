@@ -17,4 +17,4 @@ echo "Executing DDL commands..."
 PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f /challenge-globant/sql/create_tables.sql
 
 # Start the application
-exec uvicorn challenge-project.main:challenge-project --host 0.0.0.0 --port 8000 --reload
+exec uvicorn ChallengeProject.main:challenge_project --host 0.0.0.0 --port 8000 --reload

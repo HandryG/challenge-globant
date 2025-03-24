@@ -1,5 +1,6 @@
 import os
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
+from typing import ClassVar, Dict
 import pathlib
 
 # Get the base directory
@@ -14,7 +15,7 @@ class Settings(BaseSettings):
     SQL_DIR: pathlib.Path = BASE_DIR / "sql"
     
     # Table definitions
-    TABLES = {
+    TABLES : ClassVar[Dict] = {
         "departments": {
             "columns": ["id", "department"],
             "required": ["id", "department"],

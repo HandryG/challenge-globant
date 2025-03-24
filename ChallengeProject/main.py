@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from challenge-project.api.routes import router
+from ChallengeProject.api.routes import router
 
 challenge_project = FastAPI(
     title="Employee Data API",

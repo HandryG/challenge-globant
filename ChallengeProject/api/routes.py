@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
-from challenge-project.api.data_processor import DataProcessor
+from ChallengeProject.api.data_processor import DataProcessor
 import traceback
 
 router = APIRouter()

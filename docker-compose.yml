@@ -2,7 +2,7 @@ services:
   api:
     build: .
     env_file:
-      - /challenge-project/.env
+      - /ChallengeProject/.env
     ports:
       - "8000:8000"
     volumes:

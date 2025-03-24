@@ -1,9 +1,9 @@
 import csv
 import io
 from typing import List, Dict, Any, Iterator, Tuple
-from challenge-project.config import settings
+from ChallengeProject.config import settings
 import psycopg2
-from challenge-project.database import get_connection
+from ChallengeProject.database import get_connection
 
 class DataProcessor:
     """Flexible data processor for CSV import with dynamic schema support."""

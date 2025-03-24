@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2.extras import DictCursor
-from challenge-project.config import settings
+from ChallengeProject.config import settings
 import os
 
 def get_connection():
