@@ -1,6 +1,6 @@
 FROM python:3.9-slim
 
-WORKDIR /challenge-proyect
+WORKDIR /challenge-globant
 
 # Install system dependencies
 RUN apt-get update && \
@@ -18,11 +18,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY . .
 
+RUN echo "DIRECTORY LISTING START" && ls -la /challenge-globant/ && echo "DIRECTORY LISTING END"
 # Make sure the entrypoint script is executable
-RUN chmod +x /challenge-proyect/entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 # Expose the port
 EXPOSE 8000
 
 # Use entrypoint script to wait for database and start application
-ENTRYPOINT ["/challenge-proyect/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

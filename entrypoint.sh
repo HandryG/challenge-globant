@@ -14,7 +14,7 @@ echo "PostgreSQL is up - executing command"
 
 # Execute DDL commands
 echo "Executing DDL commands..."
-PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f /path/to/your/schema.sql
+PGPASSWORD=$POSTGRES_PASSWORD psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -f /challenge-globant/sql/create_tables.sql
 
 # Start the application
-exec uvicorn challenge-proyect.main:challenge-proyect --host 0.0.0.0 --port 8000 --reload
+exec uvicorn challenge-project.main:challenge-project --host 0.0.0.0 --port 8000 --reload
