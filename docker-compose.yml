@@ -7,6 +7,7 @@ services:
       - "8000:8000"
     volumes:
       - .:/challenge-globant
+      - backup_volume:/var/lib/backups
     command: sh -c "ls -la /challenge-globant && echo 'Checking for entrypoint' && find / -name entrypoint.sh"
     depends_on:
       - db
@@ -17,6 +18,7 @@ services:
       - POSTGRES_DB=employee_db
       - DATABASE_URL=postgresql://postgres:password@db:5432/employee_db
       - MAX_BATCH_SIZE=1000
+      - BACKUP_DIR=/var/lib/backups
     restart: always
     
 
@@ -24,7 +26,7 @@ services:
     image: postgres:13
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-      - ./sql:/sql:ro   # Mount SQL files as read-only volume
+      - ./sql:/sql:ro   
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
@@ -39,3 +41,4 @@ services:
 
 volumes:
   postgres_data:
+  backup_volume:

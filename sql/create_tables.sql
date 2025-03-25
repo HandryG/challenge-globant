@@ -1,24 +1,24 @@
 
 CREATE TABLE IF NOT EXISTS departments (
-    id INTEGER PRIMARY KEY,
+    department_key SERIAL PRIMARY KEY,
+    id INTEGER ,
     department VARCHAR(100) NOT NULL
 );
 
 
 CREATE TABLE IF NOT EXISTS jobs (
-    id INTEGER PRIMARY KEY,
+    job_key SERIAL PRIMARY KEY,
+    id INTEGER ,
     job VARCHAR(100) NOT NULL
 );
 
 
 CREATE TABLE IF NOT EXISTS hired_employees (
-    id INTEGER PRIMARY KEY,
+    hire_key SERIAL PRIMARY KEY,
+    id INTEGER ,
     name VARCHAR(100) NOT NULL,
-    datetime VARCHAR(50) NOT NULL,
-    department_id INTEGER REFERENCES departments(id),
-    job_id INTEGER REFERENCES jobs(id)
+    datetime TIMESTAMP NOT NULL,
+    department_id INTEGER,
+    job_id INTEGER
 );
 
-
--- To run this script from PostgreSQL console:
--- psql -U postgres -d employee_db -f /sql/create_tables.sql
